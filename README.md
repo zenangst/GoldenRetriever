@@ -8,10 +8,9 @@
 ## Usage
 
 ```swift
-let resource = "https://avatars2.githubusercontent.com/u/57446?v=3&s=460"
 let fido = GoldenRetriever()
 
-fido.fetch(resource) { data, error in
+fido.fetch("https://avatars2.githubusercontent.com/u/57446?v=3&s=460") { data, error in
   // give 🐶 a 🍬
 }
 ```

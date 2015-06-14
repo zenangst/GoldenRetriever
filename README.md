@@ -1,4 +1,4 @@
-# GoldenRetriever
+![GoldenRetriever logo](https://raw.githubusercontent.com/zenangst/GoldenRetriever/master/Images/logo.png)
 
 [![CI Status](http://img.shields.io/travis/zenangst/GoldenRetriever.svg?style=flat)](https://travis-ci.org/zenangst/GoldenRetriever)
 [![Version](https://img.shields.io/cocoapods/v/GoldenRetriever.svg?style=flat)](http://cocoadocs.org/docsets/GoldenRetriever)

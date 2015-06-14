@@ -2,7 +2,7 @@ import Foundation
 
 public struct GoldenRetriever {
 
-  public func fetch(resource: String, closure: (data: NSData!, error: NSError!) -> Void) {
+  public func fetch(resource: String, closure: (data: NSData, error: NSError?) -> Void) {
     if let url = NSURL(string: resource) {
       let session = NSURLSession.sharedSession()
       let request = NSURLRequest(URL: url)

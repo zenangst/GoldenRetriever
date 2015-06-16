@@ -2,6 +2,8 @@ import Foundation
 
 public struct GoldenRetriever {
 
+  public init() {}
+
   public func fetch(resource: String, closure: (data: NSData, error: NSError?) -> Void) {
     if let url = NSURL(string: resource) {
       let session = NSURLSession.sharedSession()

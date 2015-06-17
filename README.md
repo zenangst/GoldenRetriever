@@ -16,6 +16,17 @@ fido.fetch(resource) { data, error in
 }
 ```
 
+Golden Retriever also support custom headers for your request.
+
+```swift
+
+let lassie = GoldenRetriever(headers: ["Authorization" : "Bearer \(token)"])
+lassie.fetch("timmy.in.the.well") { data, error in
+  // give 🐶 a 🍬
+}
+
+```
+
 ## Installation
 
 **GoldenRetriever** is available through [CocoaPods](http://cocoapods.org). To install

@@ -1,6 +1,6 @@
 import Foundation
 
-public struct GoldenRetriever {
+public class GoldenRetriever {
 
   public init() {}
 

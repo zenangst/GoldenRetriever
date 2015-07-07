@@ -18,7 +18,7 @@ public class GoldenRetriever {
     })
   }
 
-  public func fetch(resource: String, closure: (data: NSData, response: NSURLResponse, error: NSError?) -> Void) {
+  public func fetch(resource: String, closure: (data: NSData, response: NSURLResponse?, error: NSError?) -> Void) {
     if let url = NSURL(string: resource) {
       let session = NSURLSession.sharedSession()
       let request = NSMutableURLRequest(URL: url)

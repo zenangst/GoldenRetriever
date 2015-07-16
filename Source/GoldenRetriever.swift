@@ -8,17 +8,21 @@ public class GoldenRetriever {
 
   public convenience init(headers: [String : String]) {
     self.init()
-    
+
     self.headers = headers
   }
 
-  public func fetch(resource: String, closure: (data: NSData, error: NSError?) -> Void) {
-    fetch(resource, closure: { (data, _, error) -> Void in
+  public func fetch(resource: String, closure: (data: NSData, error: NSError?) -> Void) -> NSURLSessionTask? {
+    let sessionTask = fetch(resource, closure: { (data, _, error) -> Void in
       closure(data: data, error: error)
     })
+
+    return sessionTask
   }
 
-  public func fetch(resource: String, closure: (data: NSData, response: NSURLResponse?, error: NSError?) -> Void) {
+  public func fetch(resource: String, closure: (data: NSData, response: NSURLResponse?, error: NSError?) -> Void) -> NSURLSessionTask? {
+    var sessionTask: NSURLSessionTask?
+
     if let url = NSURL(string: resource) {
       let session = NSURLSession.sharedSession()
       let request = NSMutableURLRequest(URL: url)
@@ -29,12 +33,14 @@ public class GoldenRetriever {
         }
       }
 
-      let task = session.dataTaskWithRequest(request,
+      sessionTask = session.dataTaskWithRequest(request,
         completionHandler: { (data, response, error) -> Void in
           closure(data: data, response: response, error: error)
       })
 
-      task.resume()
+      sessionTask?.resume()
     }
+
+    return sessionTask
   }
 }

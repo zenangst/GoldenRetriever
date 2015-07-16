@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "GoldenRetriever"
   s.summary          = "A short description of GoldenRetriever."
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.homepage         = "https://github.com/zenangst/GoldenRetriever"
   s.license          = 'MIT'
   s.author           = { "Christoffer Winterkvist" => "chris@zenangst.com" }
@@ -10,6 +10,4 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.requires_arc = true
   s.source_files = 'Source/**/*'
-# s.frameworks = 'UIKit', 'MapKit'
-# s.dependency 'AFNetworking', '~> 2.3'
 end

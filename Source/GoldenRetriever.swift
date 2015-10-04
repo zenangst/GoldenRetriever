@@ -12,7 +12,7 @@ public class GoldenRetriever {
     self.headers = headers
   }
 
-  public func fetch(resource: String, closure: (data: NSData, error: NSError?) -> Void) -> NSURLSessionTask? {
+  public func fetch(resource: String, closure: (data: NSData?, error: NSError?) -> Void) -> NSURLSessionTask? {
     let sessionTask = fetch(resource, closure: { (data, _, error) -> Void in
       closure(data: data, error: error)
     })
@@ -20,7 +20,7 @@ public class GoldenRetriever {
     return sessionTask
   }
 
-  public func fetch(resource: String, closure: (data: NSData, response: NSURLResponse?, error: NSError?) -> Void) -> NSURLSessionTask? {
+  public func fetch(resource: String, closure: (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void) -> NSURLSessionTask? {
     var sessionTask: NSURLSessionTask?
 
     if let url = NSURL(string: resource) {
